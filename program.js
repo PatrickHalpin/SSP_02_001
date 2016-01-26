@@ -1,4 +1,5 @@
 var fs = require("fs");
+var i =0;
 
 //getting the contents of the file
 fs.readdir("./", function (err, files)
@@ -15,11 +16,19 @@ fs.readdir("./", function (err, files)
 			//read the file and print out the conents 
 			fs.readFile(files[x], function (err, data)
 			{
-				console.log("contents of " + files[x] + ' ' + data);		
+				console.log("contents of " + files[x] + ' ' + data);
+				i++;
+				
+				if(i == files.length -1)
+				{
+					console.log('all done');	
+				}
+				
 			});
 		}
 
-		
+						
 		
 	}
 });
+
