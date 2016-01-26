@@ -10,11 +10,12 @@ fs.readdir("./", function (err, files)
 	 	//testing if the file name is the same as the program name
 	 	if(files[x]!='program.js')
 	 	{
+	 		//print file name
 			console.log(files[x]);
 			//read the file and print out the conents 
 			fs.readFile(x, function (err, data)
 			{
-				console.log(data);		
+				console.log("contents of file: " + data);		
 			});
 		}
 
