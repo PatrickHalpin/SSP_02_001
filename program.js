@@ -1,5 +1,6 @@
 var fs = require("fs");
-var i =0;
+//conts the iterations of reading files, used for displaying final message
+var i =0; 
 
 //getting the contents of the file
 fs.readdir("./", function (err, files)
@@ -13,12 +14,13 @@ fs.readdir("./", function (err, files)
 	 	{
 	 		//print file name
 			console.log(files[x]);
-			//read the file and print out the conents 
+			//read the file and print out the contents 
 			fs.readFile(files[x], function (err, data)
 			{
 				console.log("contents of " + files[x] + ' ' + data);
 				i++;
-				
+
+				//display message when count is finished
 				if(i == files.length -1)
 				{
 					console.log('all done');	
