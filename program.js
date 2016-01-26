@@ -13,9 +13,9 @@ fs.readdir("./", function (err, files)
 	 		//print file name
 			console.log(files[x]);
 			//read the file and print out the conents 
-			fs.readFile(x, function (err, data)
+			fs.readFile(files[x], function (err, data)
 			{
-				console.log("contents of file: " + data);		
+				console.log("contents of " + files[x] + ' ' + data);		
 			});
 		}
 
